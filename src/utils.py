@@ -7,8 +7,15 @@ from sklearn.model_selection import GridSearchCV
 
 def save_object(file_path, object):
     try:
-        logging.info("Dumping the object as pickle file")
+        logging.info("Serializing the object as pickle file")
         joblib.dump(object, file_path)
+    except Exception as e:
+        raise CustomException(e, sys)
+    
+def load_object(file_path):
+    try:
+        logging.info("Deserializing the pickle file as object")
+        return joblib.load(file_path)
     except Exception as e:
         raise CustomException(e, sys)
 
