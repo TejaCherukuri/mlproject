@@ -1,4 +1,7 @@
 venv/
 *.egg-info
 src/logs/
+logs/
 notebook/catboost_info
+artifacts/
+*__pycache__
